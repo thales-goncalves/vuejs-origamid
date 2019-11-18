@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <script src="/vue.js"></script>
+        <title>Vue.Js</title>
+    </head>
+
+    <body>
+        <div id="appVue">
+            {{process}}
+        </div>
+    </body>
+
+    <script>
+        function VueClone(options) {
+            this.options = options;
+            this.el = document.querySelector(options.el);
+            this.data = options.data;
+        }
+
+        const vmClone = new VueClone({
+            el: '#app',
+            data: {
+                nome: 'Thales'
+            }
+        });
+        console.log(vmClone);
+
+        const vm = new Vue({
+            el: '#appVue',
+            data: {
+                instrument: 'Bass',
+                /**
+                 * Properties with $ or _ are used to avoid conflits with custom
+                 * data and properties
+                 */
+                player: 'David504',
+                band: 'Youtube',
+                message: ''
+            },
+            computed: {
+                process() {
+                    return (this.message =
+                        this.player +
+                        ' plays ' +
+                        this.instrument +
+                        ' on his' +
+                        this.band +
+                        ' channel');
+                }
+            }
+        });
+
+        console.log(vm);
+    </script>
+</html>
