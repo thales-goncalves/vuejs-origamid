@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <script src="/vue.js"></script>
+        <title>Vue.Js</title>
+    </head>
+    <body>
+        <style>
+            .green {
+                color: green;
+            }
+            .red {
+                color: red;
+            }
+        </style>
+
+        <div id="app">
+            <button v-on:click="handleClick">Click Here</button>
+            <button @click="handleClick">Click Here</button>
+
+            <button @click="changeCollor">Lets Change Collors</button>
+            <p :class="active ? 'green' : 'red'">I Can Change my Collor!!</p>
+
+            <a href="#inner" @click.prevent.once="handleClick">Link Interno</a>
+            <input type="text" @keyup.enter="handleClick" />
+            <p @mousemove="handleMove">
+                This is the mouse in X coordinate: {{mouse.x}}
+            </p>
+        </div>
+    </body>
+
+    <script>
+        const vm = new Vue({
+            el: '#app',
+            data: {
+                active: true,
+                mouse: ''
+            },
+            methods: {
+                handleClick(event) {
+                    console.log(event);
+                },
+                handleMove(event) {
+                    this.mouse = event;
+                },
+                changeCollor() {
+                    this.active = !this.active;
+                }
+            }
+        });
+    </script>
+</html>
