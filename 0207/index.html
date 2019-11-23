@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <script src="/vue.js"></script>
+        <title>Vue.Js</title>
+    </head>
+    <body>
+        <div id="app">
+            <p>{{link}}</p>
+            <p v-html="link">Link</p>
+
+            <p>{{instrument}}</p>
+            <p v-text="instrument">Apple</p>
+
+            <p>{{YOLO}}</p>
+            <button @click="YOLO += ', Davie504!!!'">WHO?</button>
+
+            <p v-once>{{YOLO}}</p>
+        </div>
+    </body>
+    <script>
+        const vm = new Vue({
+            el: '#app',
+            data: {
+                link: "<a href='https://www.google.com'>Google</a>",
+                instrument: 'bass',
+                YOLO: 'You only live once'
+            }
+        });
+    </script>
+</html>
