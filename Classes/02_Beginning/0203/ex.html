@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <script src="/vue.js"></script>
+        <title>Vue.Js - Ex</title>
+    </head>
+    <body>
+        <div id="app">
+            <p>Base {{base}}</p>
+            <p>Real {{brl}}</p>
+            <p>Euro {{eur}}</p>
+            <button @click="readCurrency">readCurrency</button>
+        </div>
+    </body>
+
+    <script>
+        const vm = new Vue({
+            el: '#app',
+            data: {
+                base: '',
+                brl: '',
+                eur: ''
+            },
+            methods: {
+                readCurrency() {
+                    fetch('https://api.ratesapi.io/api/latest?base=USD')
+                        .then(response => response.json())
+                        .then(json => {
+                            this.base = json.base;
+                            this.brl = json.rates.BRL;
+                            this.eur = json.rates.EUR;
+                        });
+                }
+            }
+        });
+    </script>
+</html>

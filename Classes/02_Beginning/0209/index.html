@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <script src="/vue.js"></script>
+        <title>Vue.Js</title>
+    </head>
+    <body>
+        <div id="app">
+            <div>
+                <p>{{total}}</p>
+            </div>
+            <ul>
+                <li v-for="car in blueCars">
+                    {{car.brand}}
+                </li>
+            </ul>
+            <button @click="removeCar">Remove</button>
+            <br />
+            <div>
+                <p>{{count}}</p>
+                <button @click="addCounter">ADD</button>
+                <button @click="removeCounter">REMOVE</button>
+            </div>
+            <br />
+            <input type="text" maxlength="8" placeholder="cep" v-model="cep" />
+            <p>{{cep}}</p>
+            <br />
+            <ul>
+                <li v-for="value, key in address">{{key}}: {{value}}</li>
+            </ul>
+        </div>
+    </body>
+
+    <script>
+        const vm = new Vue({
+            el: '#app',
+            data: {
+                cep: '',
+                address: {},
+                price: 59,
+                discount: 10,
+                cars: [
+                    {
+                        brand: 'VW',
+                        color: 'Blue'
+                    },
+                    {
+                        brand: 'Ford',
+                        color: 'White'
+                    },
+                    {
+                        brand: 'Fiat',
+                        color: 'Blue'
+                    }
+                ],
+                count: 0
+            },
+            methods: {
+                removeCar() {
+                    this.cars.pop();
+                },
+                addCounter() {
+                    this.count++;
+                },
+                removeCounter() {
+                    this.count--;
+                }
+            },
+            computed: {
+                total() {
+                    return 'CAD ' + (this.price - this.discount);
+                },
+                blueCars() {
+                    return this.cars.filter(({ color }) => color === 'Blue');
+                }
+            },
+            watch: {
+                count(before, after) {
+                    console.log(after);
+                    console.log(before);
+                    this.removeCar();
+                },
+                cep(data) {
+                    console.log(data.length === 8);
+                    if (data.length === 8) {
+                        fetch(`https://viacep.com.br/ws/${data}/json/`)
+                            .then(r => r.json())
+                            .then(r => {
+                                this.address = r;
+                            });
+                    }
+                }
+            }
+        });
+    </script>
+</html>

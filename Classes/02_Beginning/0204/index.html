@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <script src="/vue.js"></script>
+        <title>Vue.Js</title>
+    </head>
+    <body>
+        <div id="app">
+            <a v-bind:href="link">Link Google</a>
+            <p :class="color">Color</p>
+            <p :class="linked ? yes : no">Is linked account</p>
+        </div>
+    </body>
+    <script>
+        const vm = new Vue({
+            el: '#app',
+            data: {
+                link: 'https://www.google.com',
+                color: 'red',
+                linked: true,
+                yes: 'YES',
+                no: 'NO'
+            }
+        });
+    </script>
+</html>
