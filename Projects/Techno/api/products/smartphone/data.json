@@ -1,0 +1,20 @@
+{
+  "id": "smartphone",
+  "name": "Smartphone",
+  "price": 1299,
+  "description": "A transformative triple‑camera system that adds tons of capability without complexity. An unprecedented leap in battery life. And a mind‑blowing chip that doubles down on machine learning and pushes the boundaries of what a smartphone can do. Welcome to the first iPhone powerful enough to be called Pro.",
+  "stock": 3,
+  "img": "./api/products/smartphone/smartphone-photo.jpg",
+  "reviews": [
+    {
+      "name": "Yuri",
+      "stars": 5,
+      "description": "Very good product. Attends all my needs and easily replaced my camera. I am not a professional photographer, so it attends perfectly for what I need. I recommend 100%."
+    },
+    {
+      "name": "Stephanie",
+      "stars": 4,
+      "description": "Is a really good iPhone. Is good for watching videos. Has an amazing camera quality. Is good for scrolling on social media. Does the job when texting and phone calls."
+    }
+  ]
+}

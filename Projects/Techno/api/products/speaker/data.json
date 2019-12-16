@@ -1,0 +1,20 @@
+{
+  "id": "speaker",
+  "name": "Speaker",
+  "price": 599,
+  "description": "HomePod is a breakthrough speaker that adapts to its location and delivers high-fidelity audio wherever it’s playing. Together with Apple Music and Siri, it creates an entirely new way for you to discover and interact with music at home. And it can help you and your whole family with everyday tasks — and control your smart home — all with just your voice.",
+  "stock": 3,
+  "img": "./api/products/speaker/speaker-photo.jpg",
+  "reviews": [
+    {
+      "name": "Meldrew",
+      "stars": 4,
+      "description": "I like Apple products, and have a number of them, I have not been greatly impressed by HomePod. Speaker is good but not brilliant, and I’m sick of having to yell “hey Siri” , it can be quite deaf! I’m not finding it useful at all. Lately if I ask it to do something all of my devices react, not as clever as I had hoped."
+    },
+    {
+      "name": "Jamyson G.",
+      "stars": 3,
+      "description": "Yes, the sound quality is good but home pod itself is a confined piece of junk. Siri is still illiterate and disabled. It is evident that the person who programmed this device was a 3 year old girl who just walked across someones keyboard and typed some jargon code. Siri only responds when im not talking to her."
+    }
+  ]
+}

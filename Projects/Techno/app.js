@@ -5,7 +5,8 @@ const vm = new Vue({
     product: false,
     shoppingCart: [],
     alertMessage: '',
-    alertActive: false
+    alertActive: false,
+    shoppingCartActive: false
   },
   filters: {
     priceNumber(price) {
@@ -62,6 +63,15 @@ const vm = new Vue({
         this.product = false;
       }
     },
+    modalCloseShoppingCart({ target, currentTarget }) {
+      if (target === currentTarget) {
+        this.shoppingCartActive = false;
+      }
+    },
+    checkStock() {
+      const items = this.shoppingCart.filter(({ id }) => id === this.product.id);
+      this.product.stock -= items.length;
+    },
     checkLocalStorage() {
       if (window.localStorage.shoppingCart) {
         this.shoppingCart = JSON.parse(window.localStorage.shoppingCart);
@@ -89,6 +99,9 @@ const vm = new Vue({
       document.title = this.product.name || 'Techno';
       const hash = this.product.id || '';
       history.pushState(null, null, `#${hash}`);
+      if (this.product) {
+        this.checkStock();
+      }
     }
   },
   created() {

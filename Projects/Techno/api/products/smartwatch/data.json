@@ -1,0 +1,20 @@
+{
+  "id": "smartwatch",
+  "name": "Smartwatch",
+  "price": 1199,
+  "description": "The most elegant expression of Apple Watch returns with two iconic materials — titanium and ceramic. Featuring all the innovations and the craftsmanship of traditional watchmaking. It’s as modern as can be and as classic as it gets.",
+  "stock": 5,
+  "img": "./api/products/smartwatch/smartwatch-photo.jpg",
+  "reviews": [
+    {
+      "name": "Thomas",
+      "stars": 5,
+      "description": "Im always missing calls and messages so having this is a game changer, it is great quality and is not slow seeing there is newer watches out battery life is also fantastic"
+    },
+    {
+      "name": "Dane",
+      "stars": 4,
+      "description": "Came to the Apple Watch party quite late. Was actually looking at FitBit for the gym when the lady at the shop suggested the Apple Watch. So happy I chose the Apple Watch, does everything I wanted it for and then some. Would definitely recommend!"
+    }
+  ]
+}

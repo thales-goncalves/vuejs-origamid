@@ -1,0 +1,20 @@
+{
+  "id": "tablet",
+  "name": "Tablet",
+  "price": 899,
+  "description": "The new iPad combines the power and capability of a computer with the ease of use and versatility you’d never expect from one. And now it’s even more versatile, with a larger 10.2‑inch Retina display, support for the full-size Smart Keyboard, and the amazing new capabilities of iPadOS. It’s unbelievably fun. And unmistakably iPad",
+  "stock": 2,
+  "img": "./api/products/tablet/tablet-photo.jpg",
+  "reviews": [
+    {
+      "name": "Roger",
+      "stars": 5,
+      "description": "Must I say! This I-Pad is worth investing especially for my children's educational use to go online for research homework."
+    },
+    {
+      "name": "Amanda",
+      "stars": 4,
+      "description": "This is one of the better apple products, with no lag time, or any screen or hardware issues."
+    }
+  ]
+}
